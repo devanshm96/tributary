@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 COPY ./entrypoint.py .
 #starts up your Flask application using Gunicorn, which basically acts as the glue between your Python code and
 #the container's underlying networking infrastructure.
-CMD exec gunicorn entrypoint:app
+CMD exec gunicorn --bind 0.0.0.0:8000 entrypoint:app
